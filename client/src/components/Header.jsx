@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <h2>ToDo App <span className="header-mid"> for your productivity</span></h2>
+        <h2>AchieveIt <span className="header-mid"> for your productivity</span></h2>
         
       </div>
       <div className="navbar-right">

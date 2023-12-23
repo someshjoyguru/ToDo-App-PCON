@@ -52,3 +52,25 @@
     color: #f9fafb;
     font-size: 1.25rem;
   }
+
+  
+.quote {
+  margin: 20px;
+  padding: 20px;
+  /* border-left: 5px solid #3498db; /* Change color as desired */
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+blockquote {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+footer {
+  text-align: right;
+  font-style: italic;
+  color: #777;
+}

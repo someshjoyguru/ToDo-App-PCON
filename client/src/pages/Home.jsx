@@ -12,6 +12,8 @@ const Home = () => {
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const [username, setUsername] = useState("");
+  const [quotes, setQuotes]=useState([]);
 
   const { isAuthenticated } = useContext(Context);
 
@@ -24,7 +26,6 @@ const Home = () => {
           withCredentials: true,
         }
       );
-
       toast.success(data.message);
       setRefresh((prev) => !prev);
     } catch (error) {
@@ -82,14 +83,49 @@ const Home = () => {
       .catch((e) => {
         toast.error(e.response.data.message);
       });
+    
+    axios.get(`${server}/users/me`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUsername(res.data.user.name);
+      })
+      .catch((e) => {
+        toast.error(e.response.data.message);
+      });
+
+      fetch("https://type.fit/api/quotes")
+      .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          const index=Math.floor(Math.random() * data.length);
+          let author = data[index].author;
+          author=author.includes(', ') ? author.split(', ')[0] : author;
+          setQuotes([data[index].text,author]);
+        })
+        .catch(error => console.error("Error fetching quotes:", error));
   }, [refresh]);
 
   if (!isAuthenticated) return <Navigate to={"/login"} />;
 
+  const Quote = ({ text, author }) => {
+    return (
+      <div className="quote">
+        <blockquote>
+          <p>{text}</p>
+          <footer>- {author}</footer>
+        </blockquote>
+      </div>
+    );
+  };
+  quotes
+
   return (
     <div className="container">
-      <h1 className="heading"> Daily Goals</h1>
-      <h6 className="subheading"> Let's Crack It</h6>
+      <h1 className="heading"> Hello, {username}</h1>
+      {/* <h6 className="subheading"> Let's Crack It</h6> */}
+      <Quote text={quotes[0]} author={quotes[1]}/>
       <form onSubmit={submitHandler}>
         <input
           type="text"
@@ -121,9 +157,11 @@ const Home = () => {
           isCompleted={i.isCompleted}
           updateHandler={updateHandler}
           deleteHandler={deleteHandler}
+          createdAt={i.createdAt}
           id={i._id}
           key={i._id}
         />
+        
       ))}
     </div>
   );

@@ -7,8 +7,8 @@
 }
 
 body{
-  /* background: #dcdce6; */
-  background-image: url('./assets/Background.png');
+  background: #dcdce6;
+  /* background-image: url('./assets/Background.png'); */
   /* background-repeat: no-repeat; */
   background-size: cover;
   background-position: center;
@@ -165,13 +165,13 @@ button:hover {
 
 .heading{
   font-size: 2.5rem; 
-  font-weight: bold; 
-  color: #013558; 
+  /* font-weight: bold;  */
+  /* color: #013558;  */
   text-align: center; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-  margin-bottom: 20px; 
-  text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.3);
+  /* text-transform: uppercase;  */
+  letter-spacing: 0.5px; 
+  /* margin-bottom: 20px;  */
+  text-shadow: 2px 2px 4px rgba(33, 59, 51, 0.3);
 }
 
 .subheading{
