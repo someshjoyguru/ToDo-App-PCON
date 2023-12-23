@@ -1,4 +1,4 @@
-# ToDo-App-PCON
+# AchieveIt-PCON
 
 2nd prize in the hackathon organized by the Programming Club of NIT Jamshedpur (PCON)
 
