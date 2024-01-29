@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Context, server } from "../main";
@@ -9,6 +9,8 @@ const Header = () => {
   const { isAuthenticated, setIsAuthenticated} =
     useContext(Context);
 
+  
+  
   const logoutHandler = async () => {
     
     try {
@@ -25,6 +27,8 @@ const Header = () => {
       
     }
   };
+
+  
 
   return (
     <nav className="navbar">

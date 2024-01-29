@@ -8,16 +8,12 @@
 
 body{
   background: #dcdce6;
-  /* background-image: url('./assets/Background.png'); */
-  /* background-repeat: no-repeat; */
-  background-size: cover;
-  background-position: center;
 }
 
 /* header styles */
 .header {
   background-color: #ecf0f1;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
 }
 
@@ -31,7 +27,7 @@ body{
   width: 80%;
   margin: auto;
   min-height: 100vh;
-  padding: 4vmax 8vmax;
+  padding-top: 5rem;
   box-sizing: border-box;
 }
 
@@ -183,4 +179,12 @@ button:hover {
   letter-spacing: 2px; 
   margin-bottom: 20px; 
   text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+@media (max-width:600px) {
+  .container{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

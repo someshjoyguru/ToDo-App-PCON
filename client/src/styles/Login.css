@@ -74,3 +74,10 @@ footer {
   font-style: italic;
   color: #777;
 }
+
+@media (max-width:600px) {
+  .login{
+    overflow: hidden;
+    width: 100%;
+  }
+}
